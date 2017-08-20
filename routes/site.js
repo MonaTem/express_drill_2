@@ -1,6 +1,8 @@
+//Routed from INDEX.JS
 const express = require('express')
 const router = express.Router()
-    //TODO: HOME
+const bcryptJS = require('../mods/bcrypt')
+    //HOME
 router.get('/', (req, res) => {
         res.render('site/home')
     })
@@ -8,9 +10,5 @@ router.get('/', (req, res) => {
 router.get('/signup', (req, res) => {
     res.render('site/signup')
 })
-router.post('/signup', (req, res) => {
-    const email = req.body.email
-    const pw = req.body.password
-    res.send(`post: signup ${email}, ${pw}`)
-})
+router.post('/signup', bcryptJS.signup)
 module.exports = router
