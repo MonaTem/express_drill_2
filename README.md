@@ -98,3 +98,12 @@ Associate the `users` table to the `posts` table. Add a `user_id` column to that
 | GET | `/posts/:id/edit` | Only logged in user whose `req.session.user_id` matches the `post.user_id`. Redirect to `/posts/:id` if not user who owns the post. |
 | PATCH | `/posts/:id` | Only logged in user whose `req.session.user_id` matches the `post.user_id`. Send status `403` if not the owning user. |
 
+## Areas of Improvement:
+I need to work on:
+* building from scratch: knexfile.js, migration file
+* remembering to use `app/router.use` when using routes
+
+## To Do
+- [ ] Create Posts DB
+- [ ] Scaffold Posts Express/EJS
+- [ ] Admin Login
